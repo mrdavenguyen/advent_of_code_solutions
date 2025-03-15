@@ -1,22 +1,4 @@
-def get_two_sum(nums, target):
-    seen = set()
-
-    for num in nums:
-        difference = target - num
-        if difference in seen:
-            return (num, difference)
-        else:
-            seen.add(num)
-    return None
-
-def get_product_of_numbers(numbers):
-    result = 1
-    for number in numbers:
-        result *= number
-    return result
-
-
-input_data = """1993
+1993
 1715
 1997
 1666
@@ -215,15 +197,4 @@ input_data = """1993
 1023
 1960
 1050
-1293"""
-
-target_sum = 2020
-
-nums = list(map(int, input_data.splitlines()))
-two_sum = get_two_sum(nums, target_sum)
-product = get_product_of_numbers(two_sum)
-
-print(product)
-
-
-
+1293
