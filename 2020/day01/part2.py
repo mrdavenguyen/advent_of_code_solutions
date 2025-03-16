@@ -1,3 +1,14 @@
+import os
+
+def load_input(filename):
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(script_dir, filename)
+    try:
+        with open(file_path, "r") as file:
+            return file.read()
+    except FileNotFoundError:
+        exit(f"File '{filename}' not found.")
+
 def get_three_sum(nums, target):
     nums.sort()
     for i in range(len(nums) - 2):
@@ -18,13 +29,6 @@ def get_product_of_numbers(numbers):
     for number in numbers:
         result *= number
     return result
-
-def load_input(filename):
-    try:
-        with open(filename, "r") as file:
-            return file.read()
-    except FileNotFoundError:
-        exit(f"File '{filename}' not found.")
 
 def main():
     target_sum = 2020

@@ -1,6 +1,10 @@
+import os
+
 def load_input(filename):
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(script_dir, filename)
     try:
-        with open(filename, "r") as file:
+        with open(file_path, "r") as file:
             return file.read()
     except FileNotFoundError:
         exit(f"File '{filename}' not found.")
