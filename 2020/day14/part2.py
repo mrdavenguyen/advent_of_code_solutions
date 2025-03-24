@@ -24,6 +24,7 @@ def load_input(filename):
 
 def convert_decimal_to_n_bit_binary(n, decimal):
     binary = int(bin(decimal)[2:])
+
     return f"{binary:0{n}d}"
 
 
